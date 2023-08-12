@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download & Redirect</title>
+    <style>
+        /* Add basic styles for the landing page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        function downloadAndRedirect() {
+            // Initiate download
+            var downloadLink = document.createElement('a');
+            downloadLink.href = 'path_to_your_file.ext';  // Replace with your file path
+            downloadLink.download = 'desired_filename.ext'; // Optional: replace with desired file name
+            downloadLink.click();
+
+            // Redirect after a short delay to give browser time to start download
+            setTimeout(function() {
+                window.location.href = 'https://calendly.com/your_invite_link';  // Replace with your Calendly link
+            }, 2000);  // 2 second delay, can adjust as needed
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Welcome!</h2>
+    <p>Click the link below to download the file and proceed to our Calendly invite.</p>
+    <a href="javascript:void(0);" onclick="downloadAndRedirect()">Download & Go to Calendly</a>
+</div>
+
+</body>
+</html>
